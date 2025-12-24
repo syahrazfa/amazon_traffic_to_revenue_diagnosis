@@ -38,13 +38,13 @@ This project answers:
 ### Decision Outputs
 
 This warehouse must produce: 
-| Channel     | Revenue | Repeat Rate | Contribution Margin | Verdict            |
-| ----------- | ------- | ----------- | ------------------- | ------------------ |
-| Paid Social |         |             |                     | Kill / Fix / Scale |
-| Organic     |         |             |                     | Scale              |
-| Email       |         |             |                     | Scale              |
-| Referral    |         |             |                     | Fix                |
-| Direct      |         |             |                     | Scale              |
+| Channel     | Revenue | Repeat Rate | Contribution Margin | Funnel Loss | Verdict            | 
+| ----------- | ------- | ----------- | ------------------- | ----------- | ------------------ |
+| Paid Social |         |             |                     |             | Kill / Fix / Scale |
+| Organic     |         |             |                     |             | Scale              |
+| Email       |         |             |                     |             | Scale              |
+| Referral    |         |             |                     |             | Fix                |
+| Direct      |         |             |                     |             | Scale              |
 
 ---
 
@@ -55,6 +55,15 @@ This warehouse is decision-first, not tool-first.
 - Architecture is designed only to freeze business truth required for capital decisions.
 - ETL exists to protect and move truth — not to look impressive.
 - All models exist to support money-flow diagnosis.
+
+---
+
+### Behavioral Diagnostics Layer
+
+In addition to channel-level margin and capital allocation diagnosis, this warehouse includes a behavioral diagnostics layer that models session and event-level customer actions (view, add-to-cart, checkout, purchase) to explain why channels produce or destroy margin.
+
+This layer does not replace economic decision logic.
+It exists solely to expose conversion mechanics and friction points inside each acquisition channel.
 
 ---
 
