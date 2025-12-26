@@ -1,11 +1,11 @@
 # Data Warehouse and Analytics Project
 
-Welcome to the **Tokopedia Traffic to Revenue Diagnosis** repository! 🚀
+Welcome to the **Amazon Customer Behaviour Decision** repository! 🚀
 
-This project implements a decision-grade data warehouse and analytics system designed to analyze how Tokopedia’s traffic sources convert into durable revenue and contribution margin.
+This project implements a decision-grade data warehouse and analytics system designed to analyze how Amazon customer behaviour sources convert into durable revenue and contribution margin.
 It freezes real business data into an auditable truth model to answer one critical question:
 
-> Which acquisition channels deserve capital and which silently destroy margin?
+> Which discounted families deserve scale and which silently destroy margin?
 
 This repository is built as an operator- and investment-oriented portfolio project, demonstrating how data engineering, financial modeling, and analytical judgment combine to support real capital allocation decisions.
 
@@ -17,7 +17,7 @@ This repository is built as an operator- and investment-oriented portfolio proje
 
 This warehouse exists to support capital allocation decisions.
 
-> Which traffic channels generate repeat customers with positive contribution margin and which destroy cash?
+> Which discounted families bring positive contribution margin and which destroy cash?
 
 The purpose of this system is not reporting.
 It is to expose where money should be invested, fixed, or cut.
@@ -28,23 +28,36 @@ It is to expose where money should be invested, fixed, or cut.
 
 This project answers:
 
-- Which channels create durable (repeat) revenue?
-- Which channels have weak or negative contribution margin?
-- Which channels appear to perform but actually destroy EBITDA?
-- Where should acquisition budget be reallocated?
+1. What category that destroy the margin?
+2. What category deserve to scale?
+3. Are discounts killing margin?
+4. Which category favored by user?
+5. Which categories convert volume into real profit vs fake profit?
+6. Which categories survive discounting with positive margin?
+7. Which categories fake growth (high sales, negative margin)?
+8. Where does price anchoring fail (high discount, low lift)?
+9. Which categories are structurally unprofitable regardless of discount?
+10. Does trust depth (rating_count) actually protect margin?
+11. Which categories need trust repair vs price repair?
+12. Where are we over-discounting because trust is weak?
+13. Which families convert without heavy discounting?
+14. Where should acquisition budget be increased?
+15. Where should acquisition be frozen or cut?
+16. Which families deserve liquidation vs reinvestment?
+17. Which families produce durable vs disposable revenue?
 
 --- 
 
 ### Decision Outputs
 
 This warehouse must produce: 
-| Channel     | Revenue | Repeat Rate | Contribution Margin | Funnel Loss | Verdict            | 
-| ----------- | ------- | ----------- | ------------------- | ----------- | ------------------ |
-| Paid Social |         |             |                     |             | Kill / Fix / Scale |
-| Organic     |         |             |                     |             | Scale              |
-| Email       |         |             |                     |             | Scale              |
-| Referral    |         |             |                     |             | Fix                |
-| Direct      |         |             |                     |             | Scale              |
+| category     | sub_category | avg_margin_loss | avg_discount_percentage | discount_truss_corr | verdict            | 
+| ------------ | ------------ | --------------- | ----------------------- | ------------------- | ------------------ |
+| Paid Social  |              |                 |                         |                     | Kill / Fix / Scale |
+| Organic      |              |                 |                         |                     | Scale              |
+| Email        |              |                 |                         |                     | Scale              |
+| Referral     |              |                 |                         |                     | Fix                |
+| Direct       |              |                 |                         |                     | Scale              |
 
 ---
 
